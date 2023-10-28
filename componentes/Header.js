@@ -2,9 +2,8 @@ import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Equipo from './Equipo';
 
-export default function header({ equipoActual }) {
+export default function header({ equipoActual, setEquipoActual }) {
   const [equipos, setEquipo] = useState(['Barcelona', 'Osasuna', 'Atlhetic']);
-  const [equipoActual, setEquipoActual] = useState(null);
 
   return (
     <View style={styles.header}>
