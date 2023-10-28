@@ -3,11 +3,12 @@ import { StyleSheet, View } from 'react-native';
 import ListaJugadores from './ListaJugadores';
 import PerfilJugador from './PerfilJugador';
 
-const Body = (props) => {
+const Body = ({ equipoActual }) => {
   return (
     <View style={styles.body}>
       <ListaJugadores
         stylesProp={styles.bodyAside}
+        equipoActual={equipoActual}
       />
       <PerfilJugador />
     </View>

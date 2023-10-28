@@ -7,26 +7,16 @@ import Header from './componentes/Header';
 export default function App() {
   const [jugadores, setJugadores] = useState([1, 2, 3, 4, 5]);
   const [jugadorActual, setJugadorActual] = useState(null);
+  const [equipoActual, setEquipoActual] = useState(null);
 
   return (
     <View style={styles.container}>
-      <Header />
+      <Header equipoActual={equipoActual} />
 
-      <Body />
+      <Body equipoActual={equipoActual} />
 
       <Footer />
 
-      <div>
-        {/* {equipoActual &&
-          jugadores.map((jugador, index) => (
-            <Jugador
-              key={index}
-              onPress={() => console.log(`${equipoActual}.${jugador}`)}
-              title={`${equipoActual}.${jugador}`}
-            />
-          ))
-        } */}
-      </div>
     </View>
   );
 }

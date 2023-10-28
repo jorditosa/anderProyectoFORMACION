@@ -1,15 +1,19 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-export default function listaJugador({ stylesProp }) {
+export default function listaJugador({ stylesProp, equipoActual }) {
   return (
 
     <View style={stylesProp}>
       <View style={styles.asideStyle}>
-        <Text style={styles.text}>Jugador 1.1</Text>
-        <Text style={styles.text}>Jugador 1.2</Text>
-        <Text style={styles.text}>Jugador 1.3</Text>
-        <Text style={styles.text}>Jugador 1.4</Text>
-        <Text style={styles.text}>Jugador 1.5</Text>
+        {equipoActual &&
+          jugadores.map((jugador, index) => (
+            <Jugador
+              key={index}
+              onPress={() => console.log(`${equipoActual}.${jugador}`)}
+              title={`${equipoActual}.${jugador}`}
+            />
+          ))
+        }
       </View>
     </View>
   );
