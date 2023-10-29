@@ -37,6 +37,11 @@ const styles = StyleSheet.create({
     padding: 4
   },
   asideStyle: {
-    width: '200px'
+    width: '200px',
+    padding: '10px',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'start',
+    gap: '10px',
   },
 });
