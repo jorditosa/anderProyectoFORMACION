@@ -1,16 +1,21 @@
 import { StyleSheet, View } from 'react-native';
+import Jugador from './Jugador';
 
-export default function listaJugador({ stylesProp, equipoActual }) {
+export default function listaJugador({ stylesProp, equipoActual, equipos }) {
+
+  const jugadores = equipos[equipoActual];
+  console.log('jugadores:', jugadores)
+
   return (
 
     <View style={stylesProp}>
       <View style={styles.asideStyle}>
         {equipoActual &&
-          jugadores.map((jugador, index) => (
+          jugadores.map((jugador) => (
             <Jugador
-              key={index}
-              onPress={() => console.log(`${equipoActual}.${jugador}`)}
-              title={`${equipoActual}.${jugador}`}
+              key={jugador.nombre}
+              onPress={() => console.log('Jugador:', jugador.nombre)}
+              nombre={jugador.nombre}
             />
           ))
         }

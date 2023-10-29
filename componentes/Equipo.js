@@ -2,11 +2,11 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-const Equipo = ({ title, equipoActual, setEquipoActual }) => {
+const Equipo = ({ equipo, setEquipoActual }) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.button} onPress={() => setEquipoActual(title)}>
-        <Text style={styles.buttonText}>{title}</Text>
+      <TouchableOpacity style={styles.button} onPress={() => setEquipoActual(equipo)}>
+        <Text style={styles.buttonText}>{equipo}</Text>
       </TouchableOpacity>
     </View>
   );

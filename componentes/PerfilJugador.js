@@ -6,7 +6,7 @@ export default function perfilJugador() {
     <View style={styles.container}>
       <View style={styles.imagenJugador}>
         <Image
-          source={require('../assets/gavi.jpg')}
+          source={require('../assets/Ronaldinho.jpg')}
           style={styles.imageStyle}
           resizeMode="cover"
         />

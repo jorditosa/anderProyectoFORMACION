@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-const Jugador = ({ title }) => {
+const Jugador = ({ nombre }) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>{title}</Text>
+        <Text style={styles.buttonText}>{nombre}</Text>
       </TouchableOpacity>
     </View>
   );

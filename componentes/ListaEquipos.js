@@ -1,16 +1,14 @@
-import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Equipo from './Equipo';
 
-export default function header({ equipoActual, setEquipoActual }) {
-  const [equipos, setEquipo] = useState(['Barcelona', 'Osasuna', 'Atlhetic']);
+export default function ListaEquipos({ equipoActual, setEquipoActual, equipos }) {
 
   return (
     <View style={styles.header}>
-      {equipos.map((equipo, index) => (
+      {Object.keys(equipos).map((equipo, index) => (
         <Equipo
           key={index}
-          title={equipo}
+          equipo={equipo}
           equipoActual={equipoActual}
           setEquipoActual={setEquipoActual}
         />
