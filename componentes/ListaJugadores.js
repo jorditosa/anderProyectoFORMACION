@@ -1,7 +1,7 @@
 import { StyleSheet, View } from 'react-native';
 import Jugador from './Jugador';
 
-export default function listaJugador({ stylesProp, equipoActual, equipos }) {
+export default function listaJugador({ stylesProp, equipoActual, equipos, jugadorActual, setJugadorActual }) {
 
   const jugadores = equipos[equipoActual];
   console.log('jugadores:', jugadores)
@@ -16,6 +16,8 @@ export default function listaJugador({ stylesProp, equipoActual, equipos }) {
               key={jugador.nombre}
               onPress={() => console.log('Jugador:', jugador.nombre)}
               nombre={jugador.nombre}
+              jugadorActual={jugadorActual}
+              setJugadorActual={setJugadorActual}
             />
           ))
         }
@@ -33,15 +35,8 @@ const styles = StyleSheet.create({
     fontSize: 22,
     margin: 10,
     padding: 4
-
-  },
-  body: {
-    borderColor: 'black',
-    borderWidth: 2,
-    flex: 1,
-    flexDirection: 'row'
   },
   asideStyle: {
-    width: 200
+    width: '200px'
   },
 });

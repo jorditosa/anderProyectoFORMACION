@@ -1,10 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-const Jugador = ({ nombre }) => {
+const Jugador = ({ nombre, jugadorActual, setJugadorActual }) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => setJugadorActual(nombre)}
+      >
         <Text style={styles.buttonText}>{nombre}</Text>
       </TouchableOpacity>
     </View>

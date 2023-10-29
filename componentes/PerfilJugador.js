@@ -1,15 +1,22 @@
-import { Image, StyleSheet, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 
-export default function perfilJugador() {
+export default function perfilJugador({ jugadorActual }) {
   return (
-
     <View style={styles.container}>
       <View style={styles.imagenJugador}>
-        <Image
-          source={require('../assets/Ronaldinho.jpg')}
-          style={styles.imageStyle}
-          resizeMode="cover"
-        />
+        {
+          jugadorActual ? (
+            <Image
+              source={require(`../assets/${jugadorActual}.jpg`)}
+              style={styles.imageStyle}
+              resizeMode="cover"
+            />
+          ) : (
+            <Text>
+              Selecciona un jugador
+            </Text>
+          )
+        }
       </View>
     </View>
   );
@@ -25,8 +32,10 @@ const styles = StyleSheet.create({
     borderWidth: 2,
   },
   imageStyle: {
-    width: '100%',
+    width: '400px',
+    margin: 'auto',
     height: '100%',
+    objectFit: 'cover',
   },
 });
 
